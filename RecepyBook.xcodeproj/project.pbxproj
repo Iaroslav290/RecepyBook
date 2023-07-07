@@ -10,12 +10,23 @@
 		C4A801722A550A2400FC738A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801712A550A2400FC738A /* AppDelegate.swift */; };
 		C4A801742A550A2400FC738A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801732A550A2400FC738A /* SceneDelegate.swift */; };
 		C4A801762A550A2400FC738A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801752A550A2400FC738A /* ViewController.swift */; };
-		C4A801792A550A2400FC738A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A801772A550A2400FC738A /* Main.storyboard */; };
 		C4A8017B2A550A2600FC738A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A8017A2A550A2600FC738A /* Assets.xcassets */; };
 		C4A8017E2A550A2600FC738A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A8017C2A550A2600FC738A /* LaunchScreen.storyboard */; };
 		C4A801892A550A2600FC738A /* RecepyBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801882A550A2600FC738A /* RecepyBookTests.swift */; };
 		C4A801932A550A2600FC738A /* RecepyBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801922A550A2600FC738A /* RecepyBookUITests.swift */; };
 		C4A801952A550A2600FC738A /* RecepyBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801942A550A2600FC738A /* RecepyBookUITestsLaunchTests.swift */; };
+		C4A801A32A5644AD00FC738A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801A22A5644AD00FC738A /* HomePageViewController.swift */; };
+		C4A801A52A56488100FC738A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801A42A56488100FC738A /* HomePage.swift */; };
+		C4A801A82A5655E000FC738A /* HotLineStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801A72A5655E000FC738A /* HotLineStackView.swift */; };
+		C4A801AB2A578AE600FC738A /* ElementsOnScrollCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801AA2A578AE600FC738A /* ElementsOnScrollCollectionView.swift */; };
+		C4A801AD2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801AC2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift */; };
+		C4A801B02A57A9D300FC738A /* WishListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801AF2A57A9D300FC738A /* WishListCollectionView.swift */; };
+		C4A801B22A57AA0C00FC738A /* WishListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B12A57AA0C00FC738A /* WishListCollectionViewCell.swift */; };
+		C4A801B42A57AA4100FC738A /* WishListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B32A57AA4100FC738A /* WishListStruct.swift */; };
+		C4A801B62A57B5F600FC738A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B52A57B5F600FC738A /* ContainerViewController.swift */; };
+		C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B72A57B63F00FC738A /* MenuViewController.swift */; };
+		C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B92A57B66400FC738A /* MenuModel.swift */; };
+		C4A801BC2A57B67A00FC738A /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +51,6 @@
 		C4A801712A550A2400FC738A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A801732A550A2400FC738A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C4A801752A550A2400FC738A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C4A801782A550A2400FC738A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4A8017A2A550A2600FC738A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4A8017D2A550A2600FC738A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4A8017F2A550A2600FC738A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +59,18 @@
 		C4A8018E2A550A2600FC738A /* RecepyBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecepyBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A801922A550A2600FC738A /* RecepyBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepyBookUITests.swift; sourceTree = "<group>"; };
 		C4A801942A550A2600FC738A /* RecepyBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepyBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4A801A22A5644AD00FC738A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		C4A801A42A56488100FC738A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		C4A801A72A5655E000FC738A /* HotLineStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotLineStackView.swift; sourceTree = "<group>"; };
+		C4A801AA2A578AE600FC738A /* ElementsOnScrollCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsOnScrollCollectionView.swift; sourceTree = "<group>"; };
+		C4A801AC2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsOnScrollCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4A801AF2A57A9D300FC738A /* WishListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionView.swift; sourceTree = "<group>"; };
+		C4A801B12A57AA0C00FC738A /* WishListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4A801B32A57AA4100FC738A /* WishListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStruct.swift; sourceTree = "<group>"; };
+		C4A801B52A57B5F600FC738A /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		C4A801B72A57B63F00FC738A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C4A801B92A57B66400FC738A /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +124,10 @@
 				C4A801712A550A2400FC738A /* AppDelegate.swift */,
 				C4A801732A550A2400FC738A /* SceneDelegate.swift */,
 				C4A801752A550A2400FC738A /* ViewController.swift */,
-				C4A801772A550A2400FC738A /* Main.storyboard */,
+				C4A801AE2A57A9AF00FC738A /* WishListCollectionView */,
+				C4A801A92A578A9800FC738A /* MainScreenScrollElements */,
+				C4A801A62A564D4700FC738A /* Elements */,
+				C4A801A12A56445F00FC738A /* Controllers */,
 				C4A8017A2A550A2600FC738A /* Assets.xcassets */,
 				C4A8017C2A550A2600FC738A /* LaunchScreen.storyboard */,
 				C4A8017F2A550A2600FC738A /* Info.plist */,
@@ -125,6 +150,46 @@
 				C4A801942A550A2600FC738A /* RecepyBookUITestsLaunchTests.swift */,
 			);
 			path = RecepyBookUITests;
+			sourceTree = "<group>";
+		};
+		C4A801A12A56445F00FC738A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801A22A5644AD00FC738A /* HomePageViewController.swift */,
+				C4A801B52A57B5F600FC738A /* ContainerViewController.swift */,
+				C4A801B72A57B63F00FC738A /* MenuViewController.swift */,
+				C4A801B92A57B66400FC738A /* MenuModel.swift */,
+				C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4A801A62A564D4700FC738A /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801A42A56488100FC738A /* HomePage.swift */,
+				C4A801A72A5655E000FC738A /* HotLineStackView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		C4A801A92A578A9800FC738A /* MainScreenScrollElements */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801AA2A578AE600FC738A /* ElementsOnScrollCollectionView.swift */,
+				C4A801AC2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift */,
+			);
+			path = MainScreenScrollElements;
+			sourceTree = "<group>";
+		};
+		C4A801AE2A57A9AF00FC738A /* WishListCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801AF2A57A9D300FC738A /* WishListCollectionView.swift */,
+				C4A801B12A57AA0C00FC738A /* WishListCollectionViewCell.swift */,
+				C4A801B32A57AA4100FC738A /* WishListStruct.swift */,
+			);
+			path = WishListCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +298,6 @@
 			files = (
 				C4A8017E2A550A2600FC738A /* LaunchScreen.storyboard in Resources */,
 				C4A8017B2A550A2600FC738A /* Assets.xcassets in Resources */,
-				C4A801792A550A2400FC738A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +322,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A801A32A5644AD00FC738A /* HomePageViewController.swift in Sources */,
 				C4A801762A550A2400FC738A /* ViewController.swift in Sources */,
+				C4A801A52A56488100FC738A /* HomePage.swift in Sources */,
+				C4A801AD2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift in Sources */,
+				C4A801B22A57AA0C00FC738A /* WishListCollectionViewCell.swift in Sources */,
+				C4A801A82A5655E000FC738A /* HotLineStackView.swift in Sources */,
+				C4A801B02A57A9D300FC738A /* WishListCollectionView.swift in Sources */,
+				C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */,
+				C4A801B62A57B5F600FC738A /* ContainerViewController.swift in Sources */,
 				C4A801722A550A2400FC738A /* AppDelegate.swift in Sources */,
+				C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */,
+				C4A801B42A57AA4100FC738A /* WishListStruct.swift in Sources */,
 				C4A801742A550A2400FC738A /* SceneDelegate.swift in Sources */,
+				C4A801BC2A57B67A00FC738A /* MenuTableCell.swift in Sources */,
+				C4A801AB2A578AE600FC738A /* ElementsOnScrollCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +373,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C4A801772A550A2400FC738A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C4A801782A550A2400FC738A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C4A8017C2A550A2600FC738A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +510,6 @@
 				INFOPLIST_FILE = RecepyBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +537,6 @@
 				INFOPLIST_FILE = RecepyBook/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
