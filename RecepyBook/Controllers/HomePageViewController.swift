@@ -17,9 +17,14 @@ var elementsOnScrollCollectionView = ElementsOnScrollCollectionView()
 class HomePageViewController: UIViewController {
     
     var delegate: ViewControllerDelegate?
+    var tapGest: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tapGest = UITapGestureRecognizer(target: self, action: #selector(openMenu))
+        view.addGestureRecognizer(tapGest)
+        
         configureElements()
         
         view.backgroundColor = UIColor(red: 27/255, green: 34/255, blue: 35/255, alpha: 1)
@@ -60,7 +65,7 @@ class HomePageViewController: UIViewController {
             searchImage.leadingAnchor.constraint(equalTo: searchView.leadingAnchor, constant: 20),
             
             elementsOnScrollCollectionView.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 30),
-            elementsOnScrollCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -10),
+            elementsOnScrollCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             elementsOnScrollCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             elementsOnScrollCollectionView.heightAnchor.constraint(equalToConstant: 200),
             
