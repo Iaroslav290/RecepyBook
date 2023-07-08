@@ -11,6 +11,7 @@ import UIKit
 class ElementsOnScrollCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
+    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -47,6 +48,38 @@ class ElementsOnScrollCollectionView: UICollectionView, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 270, height: frame.height * 0.9)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch indexPath.item {
+        case 0: print("1")
+//            let newDishesVC = NewDishesViewController()
+//
+//                    // Retrieve the current view controller
+//                    guard let viewController = UIApplication.shared.keyWindow?.rootViewController else {
+//                        return
+//                    }
+//
+//                    // Add the view of newDishesVC as a subview to the current view controller's view
+//                    viewController.view.addSubview(newDishesVC.view)
+//
+//                    // Set the appropriate frame for the subview
+//                    newDishesVC.view.frame = viewController.view.bounds
+//
+//                    // Call the viewDidLoad() method manually
+//                    newDishesVC.viewDidLoad()
+            
+            let newDishesVC = NewDishesViewController()
+                    if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+                        navigationController.pushViewController(newDishesVC, animated: true)
+                    }
+            
+           
+        case 1: print("2")
+        default: break
+        }
+        
     }
     
     required init?(coder: NSCoder) {

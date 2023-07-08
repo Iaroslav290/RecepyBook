@@ -27,6 +27,7 @@
 		C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B72A57B63F00FC738A /* MenuViewController.swift */; };
 		C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B92A57B66400FC738A /* MenuModel.swift */; };
 		C4A801BC2A57B67A00FC738A /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */; };
+		C4A801BE2A58E6C600FC738A /* NewDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801BD2A58E6C600FC738A /* NewDishesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C4A801B72A57B63F00FC738A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C4A801B92A57B66400FC738A /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
+		C4A801BD2A58E6C600FC738A /* NewDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				C4A801B72A57B63F00FC738A /* MenuViewController.swift */,
 				C4A801B92A57B66400FC738A /* MenuModel.swift */,
 				C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */,
+				C4A801BD2A58E6C600FC738A /* NewDishesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A801A32A5644AD00FC738A /* HomePageViewController.swift in Sources */,
+				C4A801BE2A58E6C600FC738A /* NewDishesViewController.swift in Sources */,
 				C4A801762A550A2400FC738A /* ViewController.swift in Sources */,
 				C4A801A52A56488100FC738A /* HomePage.swift in Sources */,
 				C4A801AD2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift in Sources */,

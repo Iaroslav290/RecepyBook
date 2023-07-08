@@ -7,12 +7,13 @@
 
 import UIKit
 
+var isMove = false
+
 
 class ContainerViewController: UIViewController, ViewControllerDelegate {
    
     var controller: UIViewController!
     var menuViewController: UIViewController!
-    var isMove = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class ContainerViewController: UIViewController, ViewControllerDelegate {
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut,
                            animations: {
-                self.controller.view.frame.origin.x = self.controller.view.frame.width - 140
+                self.controller.view.frame.origin.x = -152
             }) { (finished) in
                 
             }
@@ -70,11 +71,16 @@ class ContainerViewController: UIViewController, ViewControllerDelegate {
     
     //MARK: ViewControllerDelegate
     
-    func toggleMenu() {
+     func toggleMenu() {
         configureMenuViewController()
         isMove = !isMove
         showMenuViewController(shouldMove: isMove)
         
     }
+    
+    @objc func toggleMenuWrapper() {
+           toggleMenu()
+        print("HIIIII")
+       }
     
 }

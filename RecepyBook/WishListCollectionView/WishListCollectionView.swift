@@ -54,4 +54,6 @@ class WishListCollectionView: UICollectionView, UICollectionViewDelegate, UIColl
     }
     
     
+    
+    
 }

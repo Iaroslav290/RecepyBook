@@ -37,7 +37,7 @@ class MenuTableCell: UITableViewCell {
         backgroundColor = .clear
 
         iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+        iconImageView.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -140).isActive = true
         iconImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
 

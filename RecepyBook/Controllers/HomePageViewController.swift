@@ -8,6 +8,8 @@
 import UIKit
 
 
+
+
 protocol ViewControllerDelegate {
     func toggleMenu()
 }
@@ -22,8 +24,6 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tapGest = UITapGestureRecognizer(target: self, action: #selector(openMenu))
-        view.addGestureRecognizer(tapGest)
         
         configureElements()
         
@@ -32,18 +32,18 @@ class HomePageViewController: UIViewController {
     
     
     func configureElements() {
-        [menuButton, headlineText, cookedLabel, searchView, searchImage, searchTextField, elementsOnScrollCollectionView, wishListLabel, WishListCollectionView.shared].forEach{
+        [/*menuButton,*/ headlineText, cookedLabel, searchView, searchImage, searchTextField, elementsOnScrollCollectionView, wishListLabel, WishListCollectionView.shared].forEach{
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        menuButton.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
+//        menuButton.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
         
         headlineText.text = "Hi Dear"
         
         NSLayoutConstraint.activate([
-            menuButton.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: -69),
-            menuButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 63),
+//            menuButton.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: -69),
+//            menuButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 63),
             
             headlineText.topAnchor.constraint(equalTo: view.topAnchor, constant: 65),
             headlineText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 45),
@@ -87,5 +87,7 @@ class HomePageViewController: UIViewController {
     @objc func openMenu() {
         delegate?.toggleMenu()
     }
+    
+    
 }
 
