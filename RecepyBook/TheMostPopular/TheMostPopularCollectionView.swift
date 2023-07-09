@@ -1,5 +1,5 @@
 //
-//  NowInTrendCollectionView.swift
+//  TheMostPopularCollectionView.swift
 //  RecepyBook
 //
 //  Created by Ярослав Вербило on 2023-07-09.
@@ -8,9 +8,9 @@
 import UIKit
 
 
-class NowInTrendCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    static let shared = NowInTrendCollectionView()
+    static let shared = TheMostPopularCollectionView()
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -20,7 +20,7 @@ class NowInTrendCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         backgroundColor = .clear
         delegate = self
         dataSource = self
-        register(NowInTrendCollectionViewCell.self, forCellWithReuseIdentifier: NowInTrendCollectionViewCell.reuseId)
+        register(TheMostPopularCollectionViewCell.self, forCellWithReuseIdentifier: TheMostPopularCollectionViewCell.reuseId)
         
         layout.minimumLineSpacing = 15
         contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
@@ -37,18 +37,17 @@ class NowInTrendCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: NowInTrendCollectionViewCell.reuseId, for: indexPath) as! NowInTrendCollectionViewCell
-        cell.imageView.image = nowInTrend[indexPath.row].image
-        cell.nameLabel.text = nowInTrend[indexPath.row].name
+        let cell = dequeueReusableCell(withReuseIdentifier: TheMostPopularCollectionViewCell.reuseId, for: indexPath) as! TheMostPopularCollectionViewCell
+        cell.imageView.image = theMostPopular[indexPath.row].image
+        cell.nameLabel.text = theMostPopular[indexPath.row].name
 //        cell.descriptionLabel.text = nowInTrend[indexPath.row].description
         
         if indexPath.row == 0 {
                 // Customize the first cell
-            cell.descriptionLabel.text = nowInTrend[indexPath.row].description
+            cell.descriptionLabel.text = theMostPopular[indexPath.row].description
                 cell.nameLabel.textAlignment = .center
                 cell.nameLabel.font = UIFont.boldSystemFont(ofSize: 32)
             cell.backgroundColor = UIColor(red: 244/255, green: 254/255, blue: 253/255, alpha: 1)
-
             
             cell.isFirstCell = true
 
@@ -58,11 +57,11 @@ class NowInTrendCollectionView: UICollectionView, UICollectionViewDelegate, UICo
             cell.nameLabel.textAlignment = .center
             cell.nameLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
                 cell.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-
                 
                 cell.isFirstCell = false
 
             }
+        
         
         
         return cell

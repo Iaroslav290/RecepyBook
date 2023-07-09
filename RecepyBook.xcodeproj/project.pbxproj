@@ -37,6 +37,11 @@
 		C4A801E02A5B579200FC738A /* NowInTrendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801DF2A5B579200FC738A /* NowInTrendCollectionView.swift */; };
 		C4A801E22A5B579A00FC738A /* NowInTrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801E12A5B579A00FC738A /* NowInTrendCollectionViewCell.swift */; };
 		C4A801E42A5B57A800FC738A /* NowInTrendStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801E32A5B57A800FC738A /* NowInTrendStruct.swift */; };
+		C4A801E82A5B7A8A00FC738A /* ElementsTheMostPopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801E72A5B7A8A00FC738A /* ElementsTheMostPopular.swift */; };
+		C4A801EA2A5B7AB000FC738A /* TheMostPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801E92A5B7AB000FC738A /* TheMostPopularViewController.swift */; };
+		C4A801EC2A5B7AC900FC738A /* TheMostPopularCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801EB2A5B7AC900FC738A /* TheMostPopularCollectionView.swift */; };
+		C4A801EE2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801ED2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift */; };
+		C4A801F02A5B7ADE00FC738A /* TheMostPopularStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801EF2A5B7ADE00FC738A /* TheMostPopularStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,11 @@
 		C4A801DF2A5B579200FC738A /* NowInTrendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowInTrendCollectionView.swift; sourceTree = "<group>"; };
 		C4A801E12A5B579A00FC738A /* NowInTrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowInTrendCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4A801E32A5B57A800FC738A /* NowInTrendStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowInTrendStruct.swift; sourceTree = "<group>"; };
+		C4A801E72A5B7A8A00FC738A /* ElementsTheMostPopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsTheMostPopular.swift; sourceTree = "<group>"; };
+		C4A801E92A5B7AB000FC738A /* TheMostPopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMostPopularViewController.swift; sourceTree = "<group>"; };
+		C4A801EB2A5B7AC900FC738A /* TheMostPopularCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMostPopularCollectionView.swift; sourceTree = "<group>"; };
+		C4A801ED2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMostPopularCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4A801EF2A5B7ADE00FC738A /* TheMostPopularStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMostPopularStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +154,7 @@
 				C4A801712A550A2400FC738A /* AppDelegate.swift */,
 				C4A801732A550A2400FC738A /* SceneDelegate.swift */,
 				C4A801752A550A2400FC738A /* ViewController.swift */,
+				C4A801E52A5B7A5600FC738A /* TheMostPopular */,
 				C4A801D92A5B570D00FC738A /* NowInTrend */,
 				C4A801C12A5B370400FC738A /* NewDishes */,
 				C4A801AE2A57A9AF00FC738A /* WishListCollectionView */,
@@ -190,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				C4A801A42A56488100FC738A /* HomePage.swift */,
-				C4A801A72A5655E000FC738A /* HotLineStackView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 			children = (
 				C4A801AA2A578AE600FC738A /* ElementsOnScrollCollectionView.swift */,
 				C4A801AC2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift */,
+				C4A801A72A5655E000FC738A /* HotLineStackView.swift */,
 			);
 			path = MainScreenScrollElements;
 			sourceTree = "<group>";
@@ -250,6 +261,26 @@
 			isa = PBXGroup;
 			children = (
 				C4A801DB2A5B573B00FC738A /* ElementsNowInTrend.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		C4A801E52A5B7A5600FC738A /* TheMostPopular */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801E62A5B7A7300FC738A /* Elements */,
+				C4A801E92A5B7AB000FC738A /* TheMostPopularViewController.swift */,
+				C4A801EB2A5B7AC900FC738A /* TheMostPopularCollectionView.swift */,
+				C4A801ED2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift */,
+				C4A801EF2A5B7ADE00FC738A /* TheMostPopularStruct.swift */,
+			);
+			path = TheMostPopular;
+			sourceTree = "<group>";
+		};
+		C4A801E62A5B7A7300FC738A /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801E72A5B7A8A00FC738A /* ElementsTheMostPopular.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -387,18 +418,23 @@
 				C4A801A32A5644AD00FC738A /* HomePageViewController.swift in Sources */,
 				C4A801C32A5B371D00FC738A /* NewDishesViewController.swift in Sources */,
 				C4A801762A550A2400FC738A /* ViewController.swift in Sources */,
+				C4A801EC2A5B7AC900FC738A /* TheMostPopularCollectionView.swift in Sources */,
 				C4A801A52A56488100FC738A /* HomePage.swift in Sources */,
+				C4A801EE2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift in Sources */,
 				C4A801E42A5B57A800FC738A /* NowInTrendStruct.swift in Sources */,
 				C4A801DE2A5B577900FC738A /* NowInTrendViewController.swift in Sources */,
 				C4A801AD2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift in Sources */,
+				C4A801F02A5B7ADE00FC738A /* TheMostPopularStruct.swift in Sources */,
 				C4A801C82A5B39D500FC738A /* NewDishesCollectionView.swift in Sources */,
 				C4A801B22A57AA0C00FC738A /* WishListCollectionViewCell.swift in Sources */,
 				C4A801CC2A5B39F600FC738A /* NewDishesStruct.swift in Sources */,
+				C4A801EA2A5B7AB000FC738A /* TheMostPopularViewController.swift in Sources */,
 				C4A801A82A5655E000FC738A /* HotLineStackView.swift in Sources */,
 				C4A801B02A57A9D300FC738A /* WishListCollectionView.swift in Sources */,
 				C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */,
 				C4A801CA2A5B39E800FC738A /* NewDishesCollectionViewCell.swift in Sources */,
 				C4A801B62A57B5F600FC738A /* ContainerViewController.swift in Sources */,
+				C4A801E82A5B7A8A00FC738A /* ElementsTheMostPopular.swift in Sources */,
 				C4A801722A550A2400FC738A /* AppDelegate.swift in Sources */,
 				C4A801DC2A5B573B00FC738A /* ElementsNowInTrend.swift in Sources */,
 				C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */,

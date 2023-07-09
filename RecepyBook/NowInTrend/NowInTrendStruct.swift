@@ -14,8 +14,8 @@ struct NowInTrendItem {
     var description: String
 }
 
-let sushi70 = NowInTrendItem(image: UIImage(named: "hamburger")!, name: "Chicago Burger", description: "Sweet burger with hot souse and a little bit of paprika")
-let sushi80 = NowInTrendItem(image: UIImage(named: "newDishes")!, name: "Sushi", description: "Amazing sushi with great taste")
+let sushi70 = NowInTrendItem(image: UIImage(named: "donut")!, name: "Donut", description: "Sweet desert that looks great")
+let sushi80 = NowInTrendItem(image: UIImage(named: "hamburger")!, name: "Hamburger", description: "Sweet burger with hot souse and a little bit of paprika")
 let sushi90 = NowInTrendItem(image: UIImage(named: "newDishes")!, name: "Sushi", description: "Amazing sushi with great taste")
 let sushi100 = NowInTrendItem(image: UIImage(named: "newDishes")!, name: "Sushi", description: "Amazing sushi with great taste")
 let sushi110 = NowInTrendItem(image: UIImage(named: "newDishes")!, name: "Sushi", description: "Amazing sushi with great taste")

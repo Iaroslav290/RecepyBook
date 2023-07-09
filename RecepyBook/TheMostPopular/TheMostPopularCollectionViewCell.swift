@@ -1,5 +1,5 @@
 //
-//  NowInTrendCollectionViewCell.swift
+//  TheMostPopularCollectionViewCell.swift
 //  RecepyBook
 //
 //  Created by Ярослав Вербило on 2023-07-09.
@@ -10,9 +10,9 @@ import UIKit
 
 
 
-class NowInTrendCollectionViewCell: UICollectionViewCell {
+class TheMostPopularCollectionViewCell: UICollectionViewCell {
     
-    static let reuseId = "NowInTrendCollectionViewCell"
+    static let reuseId = "TheMostPopularCollectionViewCell"
     
     
     
@@ -96,4 +96,3 @@ class NowInTrendCollectionViewCell: UICollectionViewCell {
     }
     
 }
-
