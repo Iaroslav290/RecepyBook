@@ -77,6 +77,11 @@ class ElementsOnScrollCollectionView: UICollectionView, UICollectionViewDelegate
             
            
         case 1: print("2")
+            
+            let newDishesVC = NowInTrendViewController()
+                    if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+                        navigationController.pushViewController(newDishesVC, animated: true)
+                    }
         default: break
         }
         

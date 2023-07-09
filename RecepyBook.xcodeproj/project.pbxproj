@@ -32,6 +32,11 @@
 		C4A801C82A5B39D500FC738A /* NewDishesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801C72A5B39D500FC738A /* NewDishesCollectionView.swift */; };
 		C4A801CA2A5B39E800FC738A /* NewDishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801C92A5B39E800FC738A /* NewDishesCollectionViewCell.swift */; };
 		C4A801CC2A5B39F600FC738A /* NewDishesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801CB2A5B39F600FC738A /* NewDishesStruct.swift */; };
+		C4A801DC2A5B573B00FC738A /* ElementsNowInTrend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801DB2A5B573B00FC738A /* ElementsNowInTrend.swift */; };
+		C4A801DE2A5B577900FC738A /* NowInTrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801DD2A5B577900FC738A /* NowInTrendViewController.swift */; };
+		C4A801E02A5B579200FC738A /* NowInTrendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801DF2A5B579200FC738A /* NowInTrendCollectionView.swift */; };
+		C4A801E22A5B579A00FC738A /* NowInTrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801E12A5B579A00FC738A /* NowInTrendCollectionViewCell.swift */; };
+		C4A801E42A5B57A800FC738A /* NowInTrendStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801E32A5B57A800FC738A /* NowInTrendStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,11 @@
 		C4A801C72A5B39D500FC738A /* NewDishesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesCollectionView.swift; sourceTree = "<group>"; };
 		C4A801C92A5B39E800FC738A /* NewDishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4A801CB2A5B39F600FC738A /* NewDishesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesStruct.swift; sourceTree = "<group>"; };
+		C4A801DB2A5B573B00FC738A /* ElementsNowInTrend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsNowInTrend.swift; sourceTree = "<group>"; };
+		C4A801DD2A5B577900FC738A /* NowInTrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowInTrendViewController.swift; sourceTree = "<group>"; };
+		C4A801DF2A5B579200FC738A /* NowInTrendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowInTrendCollectionView.swift; sourceTree = "<group>"; };
+		C4A801E12A5B579A00FC738A /* NowInTrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowInTrendCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4A801E32A5B57A800FC738A /* NowInTrendStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowInTrendStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,8 +237,21 @@
 		C4A801D92A5B570D00FC738A /* NowInTrend */ = {
 			isa = PBXGroup;
 			children = (
+				C4A801DA2A5B572B00FC738A /* Elements */,
+				C4A801DD2A5B577900FC738A /* NowInTrendViewController.swift */,
+				C4A801DF2A5B579200FC738A /* NowInTrendCollectionView.swift */,
+				C4A801E12A5B579A00FC738A /* NowInTrendCollectionViewCell.swift */,
+				C4A801E32A5B57A800FC738A /* NowInTrendStruct.swift */,
 			);
 			path = NowInTrend;
+			sourceTree = "<group>";
+		};
+		C4A801DA2A5B572B00FC738A /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801DB2A5B573B00FC738A /* ElementsNowInTrend.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +388,8 @@
 				C4A801C32A5B371D00FC738A /* NewDishesViewController.swift in Sources */,
 				C4A801762A550A2400FC738A /* ViewController.swift in Sources */,
 				C4A801A52A56488100FC738A /* HomePage.swift in Sources */,
+				C4A801E42A5B57A800FC738A /* NowInTrendStruct.swift in Sources */,
+				C4A801DE2A5B577900FC738A /* NowInTrendViewController.swift in Sources */,
 				C4A801AD2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift in Sources */,
 				C4A801C82A5B39D500FC738A /* NewDishesCollectionView.swift in Sources */,
 				C4A801B22A57AA0C00FC738A /* WishListCollectionViewCell.swift in Sources */,
@@ -375,11 +400,14 @@
 				C4A801CA2A5B39E800FC738A /* NewDishesCollectionViewCell.swift in Sources */,
 				C4A801B62A57B5F600FC738A /* ContainerViewController.swift in Sources */,
 				C4A801722A550A2400FC738A /* AppDelegate.swift in Sources */,
+				C4A801DC2A5B573B00FC738A /* ElementsNowInTrend.swift in Sources */,
 				C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */,
 				C4A801B42A57AA4100FC738A /* WishListStruct.swift in Sources */,
 				C4A801C62A5B374700FC738A /* Elements.swift in Sources */,
 				C4A801742A550A2400FC738A /* SceneDelegate.swift in Sources */,
+				C4A801E22A5B579A00FC738A /* NowInTrendCollectionViewCell.swift in Sources */,
 				C4A801BC2A57B67A00FC738A /* MenuTableCell.swift in Sources */,
+				C4A801E02A5B579200FC738A /* NowInTrendCollectionView.swift in Sources */,
 				C4A801AB2A578AE600FC738A /* ElementsOnScrollCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
