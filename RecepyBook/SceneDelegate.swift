@@ -23,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                let controller = ContainerViewController()
                let navigationController = UINavigationController(rootViewController: controller)
+                navigationController.navigationBar.tintColor = .white
+        
 
         
                // Customize the navigation bar appearance

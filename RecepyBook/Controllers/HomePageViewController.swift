@@ -29,7 +29,6 @@ class HomePageViewController: UIViewController {
         view.backgroundColor = UIColor(red: 27/255, green: 34/255, blue: 35/255, alpha: 1)
         
         
-        
     }
     func configureElements() {
         [/*menuButton,*/ headlineText, cookedLabel, searchView, searchImage, searchTextField, elementsOnScrollCollectionView, wishListLabel, WishListCollectionView.shared].forEach{

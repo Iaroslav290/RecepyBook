@@ -16,6 +16,7 @@ class NowInTrendViewController: UIViewController {
         configureElements()
         
 
+
     }
 
     func configureElements() {
