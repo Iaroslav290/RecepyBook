@@ -8,6 +8,7 @@
 import UIKit
 
 var isMove = false
+let button = UIButton(type: .custom)
 
 
 class ContainerViewController: UIViewController, ViewControllerDelegate {
@@ -19,6 +20,28 @@ class ContainerViewController: UIViewController, ViewControllerDelegate {
         super.viewDidLoad()
         
         configureViewController()
+        
+        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        button.layer.cornerRadius = 45/2
+        //    button.setImage(UIImage(named: "menu"), for: .normal)
+        let buttonImage = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
+        button.setImage(buttonImage, for: .normal)
+        button.addTarget(self, action: #selector(toggleMenuWrapper), for: .touchUpInside)
+        
+        // Adjust the image size
+        let scaledImageSize = CGSize(width: 25, height: 25)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: (45 - scaledImageSize.height) / 2, left: (45 - scaledImageSize.width) / 2, bottom: (45 - scaledImageSize.height) / 2, right: (45 - scaledImageSize.width) / 2)
+        
+        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        
+        let barButtonItem = UIBarButtonItem(customView: button)
+        
+        // Set the button as the left bar button item of the navigation bar
+        navigationItem.rightBarButtonItem = barButtonItem
+        
+        
     }
     
 

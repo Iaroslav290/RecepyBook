@@ -27,7 +27,11 @@
 		C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B72A57B63F00FC738A /* MenuViewController.swift */; };
 		C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801B92A57B66400FC738A /* MenuModel.swift */; };
 		C4A801BC2A57B67A00FC738A /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */; };
-		C4A801BE2A58E6C600FC738A /* NewDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801BD2A58E6C600FC738A /* NewDishesViewController.swift */; };
+		C4A801C32A5B371D00FC738A /* NewDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801C22A5B371D00FC738A /* NewDishesViewController.swift */; };
+		C4A801C62A5B374700FC738A /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801C52A5B374700FC738A /* Elements.swift */; };
+		C4A801C82A5B39D500FC738A /* NewDishesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801C72A5B39D500FC738A /* NewDishesCollectionView.swift */; };
+		C4A801CA2A5B39E800FC738A /* NewDishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801C92A5B39E800FC738A /* NewDishesCollectionViewCell.swift */; };
+		C4A801CC2A5B39F600FC738A /* NewDishesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801CB2A5B39F600FC738A /* NewDishesStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +76,11 @@
 		C4A801B72A57B63F00FC738A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C4A801B92A57B66400FC738A /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
-		C4A801BD2A58E6C600FC738A /* NewDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesViewController.swift; sourceTree = "<group>"; };
+		C4A801C22A5B371D00FC738A /* NewDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesViewController.swift; sourceTree = "<group>"; };
+		C4A801C52A5B374700FC738A /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		C4A801C72A5B39D500FC738A /* NewDishesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesCollectionView.swift; sourceTree = "<group>"; };
+		C4A801C92A5B39E800FC738A /* NewDishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4A801CB2A5B39F600FC738A /* NewDishesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDishesStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,8 @@
 				C4A801712A550A2400FC738A /* AppDelegate.swift */,
 				C4A801732A550A2400FC738A /* SceneDelegate.swift */,
 				C4A801752A550A2400FC738A /* ViewController.swift */,
+				C4A801D92A5B570D00FC738A /* NowInTrend */,
+				C4A801C12A5B370400FC738A /* NewDishes */,
 				C4A801AE2A57A9AF00FC738A /* WishListCollectionView */,
 				C4A801A92A578A9800FC738A /* MainScreenScrollElements */,
 				C4A801A62A564D4700FC738A /* Elements */,
@@ -162,7 +172,6 @@
 				C4A801B72A57B63F00FC738A /* MenuViewController.swift */,
 				C4A801B92A57B66400FC738A /* MenuModel.swift */,
 				C4A801BB2A57B67A00FC738A /* MenuTableCell.swift */,
-				C4A801BD2A58E6C600FC738A /* NewDishesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +202,33 @@
 				C4A801B32A57AA4100FC738A /* WishListStruct.swift */,
 			);
 			path = WishListCollectionView;
+			sourceTree = "<group>";
+		};
+		C4A801C12A5B370400FC738A /* NewDishes */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801C42A5B373800FC738A /* Elements */,
+				C4A801C22A5B371D00FC738A /* NewDishesViewController.swift */,
+				C4A801C72A5B39D500FC738A /* NewDishesCollectionView.swift */,
+				C4A801C92A5B39E800FC738A /* NewDishesCollectionViewCell.swift */,
+				C4A801CB2A5B39F600FC738A /* NewDishesStruct.swift */,
+			);
+			path = NewDishes;
+			sourceTree = "<group>";
+		};
+		C4A801C42A5B373800FC738A /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801C52A5B374700FC738A /* Elements.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		C4A801D92A5B570D00FC738A /* NowInTrend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NowInTrend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,18 +362,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A801A32A5644AD00FC738A /* HomePageViewController.swift in Sources */,
-				C4A801BE2A58E6C600FC738A /* NewDishesViewController.swift in Sources */,
+				C4A801C32A5B371D00FC738A /* NewDishesViewController.swift in Sources */,
 				C4A801762A550A2400FC738A /* ViewController.swift in Sources */,
 				C4A801A52A56488100FC738A /* HomePage.swift in Sources */,
 				C4A801AD2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift in Sources */,
+				C4A801C82A5B39D500FC738A /* NewDishesCollectionView.swift in Sources */,
 				C4A801B22A57AA0C00FC738A /* WishListCollectionViewCell.swift in Sources */,
+				C4A801CC2A5B39F600FC738A /* NewDishesStruct.swift in Sources */,
 				C4A801A82A5655E000FC738A /* HotLineStackView.swift in Sources */,
 				C4A801B02A57A9D300FC738A /* WishListCollectionView.swift in Sources */,
 				C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */,
+				C4A801CA2A5B39E800FC738A /* NewDishesCollectionViewCell.swift in Sources */,
 				C4A801B62A57B5F600FC738A /* ContainerViewController.swift in Sources */,
 				C4A801722A550A2400FC738A /* AppDelegate.swift in Sources */,
 				C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */,
 				C4A801B42A57AA4100FC738A /* WishListStruct.swift in Sources */,
+				C4A801C62A5B374700FC738A /* Elements.swift in Sources */,
 				C4A801742A550A2400FC738A /* SceneDelegate.swift in Sources */,
 				C4A801BC2A57B67A00FC738A /* MenuTableCell.swift in Sources */,
 				C4A801AB2A578AE600FC738A /* ElementsOnScrollCollectionView.swift in Sources */,

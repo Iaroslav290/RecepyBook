@@ -19,7 +19,6 @@ var elementsOnScrollCollectionView = ElementsOnScrollCollectionView()
 class HomePageViewController: UIViewController {
     
     var delegate: ViewControllerDelegate?
-    var tapGest: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +27,10 @@ class HomePageViewController: UIViewController {
         configureElements()
         
         view.backgroundColor = UIColor(red: 27/255, green: 34/255, blue: 35/255, alpha: 1)
+        
+        
+        
     }
-    
-    
     func configureElements() {
         [/*menuButton,*/ headlineText, cookedLabel, searchView, searchImage, searchTextField, elementsOnScrollCollectionView, wishListLabel, WishListCollectionView.shared].forEach{
             view.addSubview($0)
@@ -84,9 +84,7 @@ class HomePageViewController: UIViewController {
         ])
     }
     
-    @objc func openMenu() {
-        delegate?.toggleMenu()
-    }
+   
     
     
 }
