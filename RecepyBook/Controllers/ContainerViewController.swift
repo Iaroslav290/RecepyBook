@@ -22,7 +22,11 @@ class ContainerViewController: UIViewController, ViewControllerDelegate {
         configureViewController()
         
 //        navigationItem.backButtonTitle = ""
-        navigationItem.backButtonDisplayMode = .minimal
+//        navigationItem.backButtonDisplayMode = .minimal
+        
+        
+        
+        
         
         button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
         button.layer.cornerRadius = 45/2
@@ -109,4 +113,5 @@ class ContainerViewController: UIViewController, ViewControllerDelegate {
         print("HIIIII")
        }
     
+   
 }

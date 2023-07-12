@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
 
-               let controller = ContainerViewController()
+               let controller = LoginViewController()
                let navigationController = UINavigationController(rootViewController: controller)
                 navigationController.navigationBar.tintColor = .white
         

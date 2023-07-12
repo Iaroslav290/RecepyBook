@@ -42,6 +42,11 @@
 		C4A801EC2A5B7AC900FC738A /* TheMostPopularCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801EB2A5B7AC900FC738A /* TheMostPopularCollectionView.swift */; };
 		C4A801EE2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801ED2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift */; };
 		C4A801F02A5B7ADE00FC738A /* TheMostPopularStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801EF2A5B7ADE00FC738A /* TheMostPopularStruct.swift */; };
+		C4A801F32A5CF5E700FC738A /* ElementsFirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801F22A5CF5E700FC738A /* ElementsFirstScreen.swift */; };
+		C4A801F52A5CF8FD00FC738A /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801F42A5CF8FD00FC738A /* FirstScreenViewController.swift */; };
+		C4A801F92A5CFD6E00FC738A /* RegistrationElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801F82A5CFD6E00FC738A /* RegistrationElements.swift */; };
+		C4A801FC2A5CFD8300FC738A /* LoginElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801FB2A5CFD8300FC738A /* LoginElements.swift */; };
+		C4A801FE2A5E25B900FC738A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A801FD2A5E25B900FC738A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +106,13 @@
 		C4A801EB2A5B7AC900FC738A /* TheMostPopularCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMostPopularCollectionView.swift; sourceTree = "<group>"; };
 		C4A801ED2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMostPopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4A801EF2A5B7ADE00FC738A /* TheMostPopularStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMostPopularStruct.swift; sourceTree = "<group>"; };
+		C4A801F22A5CF5E700FC738A /* ElementsFirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsFirstScreen.swift; sourceTree = "<group>"; };
+		C4A801F42A5CF8FD00FC738A /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
+		C4A801F82A5CFD6E00FC738A /* RegistrationElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationElements.swift; sourceTree = "<group>"; };
+		C4A801FB2A5CFD8300FC738A /* LoginElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginElements.swift; sourceTree = "<group>"; };
+		C4A801FD2A5E25B900FC738A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C4A802012A5E2EA600FC738A /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
+		C4A802022A5E312200FC738A /* Beige Miracle.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Beige Miracle.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,8 @@
 				C4A801712A550A2400FC738A /* AppDelegate.swift */,
 				C4A801732A550A2400FC738A /* SceneDelegate.swift */,
 				C4A801752A550A2400FC738A /* ViewController.swift */,
+				C4A801FF2A5E2AB800FC738A /* Fonts */,
+				C4A801F62A5CF91B00FC738A /* Registration&Login */,
 				C4A801E52A5B7A5600FC738A /* TheMostPopular */,
 				C4A801D92A5B570D00FC738A /* NowInTrend */,
 				C4A801C12A5B370400FC738A /* NewDishes */,
@@ -283,6 +297,51 @@
 				C4A801E72A5B7A8A00FC738A /* ElementsTheMostPopular.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		C4A801F12A5CF5C500FC738A /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801F22A5CF5E700FC738A /* ElementsFirstScreen.swift */,
+				C4A801F42A5CF8FD00FC738A /* FirstScreenViewController.swift */,
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		C4A801F62A5CF91B00FC738A /* Registration&Login */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801FA2A5CFD7400FC738A /* Login */,
+				C4A801F72A5CFD5300FC738A /* Registration */,
+				C4A801F12A5CF5C500FC738A /* FirstScreen */,
+			);
+			path = "Registration&Login";
+			sourceTree = "<group>";
+		};
+		C4A801F72A5CFD5300FC738A /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801F82A5CFD6E00FC738A /* RegistrationElements.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		C4A801FA2A5CFD7400FC738A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C4A801FB2A5CFD8300FC738A /* LoginElements.swift */,
+				C4A801FD2A5E25B900FC738A /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C4A801FF2A5E2AB800FC738A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C4A802012A5E2EA600FC738A /* JetBrainsMono-Regular.ttf */,
+				C4A802022A5E312200FC738A /* Beige Miracle.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,10 +475,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A801A32A5644AD00FC738A /* HomePageViewController.swift in Sources */,
+				C4A801F52A5CF8FD00FC738A /* FirstScreenViewController.swift in Sources */,
 				C4A801C32A5B371D00FC738A /* NewDishesViewController.swift in Sources */,
 				C4A801762A550A2400FC738A /* ViewController.swift in Sources */,
 				C4A801EC2A5B7AC900FC738A /* TheMostPopularCollectionView.swift in Sources */,
 				C4A801A52A56488100FC738A /* HomePage.swift in Sources */,
+				C4A801FC2A5CFD8300FC738A /* LoginElements.swift in Sources */,
 				C4A801EE2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift in Sources */,
 				C4A801E42A5B57A800FC738A /* NowInTrendStruct.swift in Sources */,
 				C4A801DE2A5B577900FC738A /* NowInTrendViewController.swift in Sources */,
@@ -433,12 +494,15 @@
 				C4A801B02A57A9D300FC738A /* WishListCollectionView.swift in Sources */,
 				C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */,
 				C4A801CA2A5B39E800FC738A /* NewDishesCollectionViewCell.swift in Sources */,
+				C4A801F92A5CFD6E00FC738A /* RegistrationElements.swift in Sources */,
+				C4A801F32A5CF5E700FC738A /* ElementsFirstScreen.swift in Sources */,
 				C4A801B62A57B5F600FC738A /* ContainerViewController.swift in Sources */,
 				C4A801E82A5B7A8A00FC738A /* ElementsTheMostPopular.swift in Sources */,
 				C4A801722A550A2400FC738A /* AppDelegate.swift in Sources */,
 				C4A801DC2A5B573B00FC738A /* ElementsNowInTrend.swift in Sources */,
 				C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */,
 				C4A801B42A57AA4100FC738A /* WishListStruct.swift in Sources */,
+				C4A801FE2A5E25B900FC738A /* LoginViewController.swift in Sources */,
 				C4A801C62A5B374700FC738A /* Elements.swift in Sources */,
 				C4A801742A550A2400FC738A /* SceneDelegate.swift in Sources */,
 				C4A801E22A5B579A00FC738A /* NowInTrendCollectionViewCell.swift in Sources */,
