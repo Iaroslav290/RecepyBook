@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Itim-Regular.ttf</string>
 		<string>Beige Miracle.ttf</string>
 		<string>JetBrainsMono-Regular.ttf</string>
 	</array>

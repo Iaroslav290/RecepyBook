@@ -51,6 +51,16 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.item {
+        case 0: print("Profile")
+        case 1: print("Wishlist")
+        case 2: print("Menu")
+        case 3: print("Contacts")
+        case 4: print("Settings")
+        default: break
+        }
+        
     }
     
     
