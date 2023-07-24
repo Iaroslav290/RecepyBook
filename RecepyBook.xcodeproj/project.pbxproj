@@ -80,7 +80,15 @@
 		C4A802422A64773E00FC738A /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C4A802412A64773E00FC738A /* FirebaseRemoteConfigSwift */; };
 		C4A802442A64773E00FC738A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C4A802432A64773E00FC738A /* FirebaseStorage */; };
 		C4A802462A64773E00FC738A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C4A802452A64773E00FC738A /* FirebaseStorageCombine-Community */; };
-		C4A802492A64895E00FC738A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A802482A64895E00FC738A /* Service.swift */; };
+		C4A802492A64895E00FC738A /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A802482A64895E00FC738A /* StorageService.swift */; };
+		C4A8024C2A67671700FC738A /* AddReceptStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8024B2A67671700FC738A /* AddReceptStorageService.swift */; };
+		C4A8024E2A676DBD00FC738A /* AddReceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8024D2A676DBD00FC738A /* AddReceptViewController.swift */; };
+		C4A802522A68AFCA00FC738A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A802512A68AFCA00FC738A /* Service.swift */; };
+		C4A802552A68B0E100FC738A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A802542A68B0E100FC738A /* Model.swift */; };
+		C4A802582A6A0FD200FC738A /* SettingsViewConttroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A802572A6A0FD200FC738A /* SettingsViewConttroller.swift */; };
+		C4A8025A2A6A0FDE00FC738A /* SettingsElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A802592A6A0FDE00FC738A /* SettingsElements.swift */; };
+		C4A8025E2A6DF14F00FC738A /* ProductPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8025D2A6DF14F00FC738A /* ProductPageViewController.swift */; };
+		C4A802602A6DF1A400FC738A /* ProductPageElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8025F2A6DF1A400FC738A /* ProductPageElements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,7 +159,15 @@
 		C4A802072A5F732400FC738A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		C4A8020A2A5F8B0300FC738A /* CheckField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckField.swift; sourceTree = "<group>"; };
 		C4A8020E2A6476C100FC738A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C4A802482A64895E00FC738A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		C4A802482A64895E00FC738A /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		C4A8024B2A67671700FC738A /* AddReceptStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceptStorageService.swift; sourceTree = "<group>"; };
+		C4A8024D2A676DBD00FC738A /* AddReceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceptViewController.swift; sourceTree = "<group>"; };
+		C4A802512A68AFCA00FC738A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		C4A802542A68B0E100FC738A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C4A802572A6A0FD200FC738A /* SettingsViewConttroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewConttroller.swift; sourceTree = "<group>"; };
+		C4A802592A6A0FDE00FC738A /* SettingsElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsElements.swift; sourceTree = "<group>"; };
+		C4A8025D2A6DF14F00FC738A /* ProductPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageViewController.swift; sourceTree = "<group>"; };
+		C4A8025F2A6DF1A400FC738A /* ProductPageElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageElements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +248,9 @@
 				C4A801712A550A2400FC738A /* AppDelegate.swift */,
 				C4A801732A550A2400FC738A /* SceneDelegate.swift */,
 				C4A801752A550A2400FC738A /* ViewController.swift */,
-				C4A802472A64895000FC738A /* Service */,
+				C4A8025C2A6DF11C00FC738A /* ProductPage */,
+				C4A802562A6A0FBB00FC738A /* Settings */,
+				C4A8024F2A67780100FC738A /* Admin */,
 				C4A802092A5F8AEF00FC738A /* Model */,
 				C4A801FF2A5E2AB800FC738A /* Fonts */,
 				C4A801F62A5CF91B00FC738A /* Registration&Login */,
@@ -419,6 +437,8 @@
 			isa = PBXGroup;
 			children = (
 				C4A8020A2A5F8B0300FC738A /* CheckField.swift */,
+				C4A802542A68B0E100FC738A /* Model.swift */,
+				C4A802472A64895000FC738A /* Service */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,9 +446,45 @@
 		C4A802472A64895000FC738A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C4A802482A64895E00FC738A /* Service.swift */,
+				C4A802512A68AFCA00FC738A /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		C4A8024A2A6766D600FC738A /* AddRecept */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8024B2A67671700FC738A /* AddReceptStorageService.swift */,
+				C4A8024D2A676DBD00FC738A /* AddReceptViewController.swift */,
+				C4A802482A64895E00FC738A /* StorageService.swift */,
+			);
+			path = AddRecept;
+			sourceTree = "<group>";
+		};
+		C4A8024F2A67780100FC738A /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8024A2A6766D600FC738A /* AddRecept */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		C4A802562A6A0FBB00FC738A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C4A802592A6A0FDE00FC738A /* SettingsElements.swift */,
+				C4A802572A6A0FD200FC738A /* SettingsViewConttroller.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C4A8025C2A6DF11C00FC738A /* ProductPage */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8025F2A6DF1A400FC738A /* ProductPageElements.swift */,
+				C4A8025D2A6DF14F00FC738A /* ProductPageViewController.swift */,
+			);
+			path = ProductPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,33 +660,41 @@
 				C4A801EC2A5B7AC900FC738A /* TheMostPopularCollectionView.swift in Sources */,
 				C4A801A52A56488100FC738A /* HomePage.swift in Sources */,
 				C4A801FC2A5CFD8300FC738A /* LoginElements.swift in Sources */,
+				C4A802602A6DF1A400FC738A /* ProductPageElements.swift in Sources */,
 				C4A801EE2A5B7AD100FC738A /* TheMostPopularCollectionViewCell.swift in Sources */,
 				C4A801E42A5B57A800FC738A /* NowInTrendStruct.swift in Sources */,
 				C4A801DE2A5B577900FC738A /* NowInTrendViewController.swift in Sources */,
 				C4A801AD2A578D9900FC738A /* ElementsOnScrollCollectionViewCell.swift in Sources */,
+				C4A8025A2A6A0FDE00FC738A /* SettingsElements.swift in Sources */,
+				C4A8025E2A6DF14F00FC738A /* ProductPageViewController.swift in Sources */,
 				C4A801F02A5B7ADE00FC738A /* TheMostPopularStruct.swift in Sources */,
 				C4A801C82A5B39D500FC738A /* NewDishesCollectionView.swift in Sources */,
 				C4A801B22A57AA0C00FC738A /* WishListCollectionViewCell.swift in Sources */,
 				C4A801CC2A5B39F600FC738A /* NewDishesStruct.swift in Sources */,
 				C4A801EA2A5B7AB000FC738A /* TheMostPopularViewController.swift in Sources */,
+				C4A8024C2A67671700FC738A /* AddReceptStorageService.swift in Sources */,
 				C4A801A82A5655E000FC738A /* HotLineStackView.swift in Sources */,
 				C4A801B02A57A9D300FC738A /* WishListCollectionView.swift in Sources */,
+				C4A8024E2A676DBD00FC738A /* AddReceptViewController.swift in Sources */,
 				C4A801B82A57B63F00FC738A /* MenuViewController.swift in Sources */,
+				C4A802552A68B0E100FC738A /* Model.swift in Sources */,
 				C4A801CA2A5B39E800FC738A /* NewDishesCollectionViewCell.swift in Sources */,
 				C4A801F92A5CFD6E00FC738A /* RegistrationElements.swift in Sources */,
 				C4A801F32A5CF5E700FC738A /* ElementsFirstScreen.swift in Sources */,
 				C4A801B62A57B5F600FC738A /* ContainerViewController.swift in Sources */,
 				C4A801E82A5B7A8A00FC738A /* ElementsTheMostPopular.swift in Sources */,
 				C4A801722A550A2400FC738A /* AppDelegate.swift in Sources */,
+				C4A802522A68AFCA00FC738A /* Service.swift in Sources */,
 				C4A801DC2A5B573B00FC738A /* ElementsNowInTrend.swift in Sources */,
 				C4A801BA2A57B66400FC738A /* MenuModel.swift in Sources */,
 				C4A801B42A57AA4100FC738A /* WishListStruct.swift in Sources */,
 				C4A801FE2A5E25B900FC738A /* LoginViewController.swift in Sources */,
-				C4A802492A64895E00FC738A /* Service.swift in Sources */,
+				C4A802492A64895E00FC738A /* StorageService.swift in Sources */,
 				C4A801C62A5B374700FC738A /* Elements.swift in Sources */,
 				C4A802082A5F732400FC738A /* RegistrationViewController.swift in Sources */,
 				C4A801742A550A2400FC738A /* SceneDelegate.swift in Sources */,
 				C4A801E22A5B579A00FC738A /* NowInTrendCollectionViewCell.swift in Sources */,
+				C4A802582A6A0FD200FC738A /* SettingsViewConttroller.swift in Sources */,
 				C4A801BC2A57B67A00FC738A /* MenuTableCell.swift in Sources */,
 				C4A801E02A5B579200FC738A /* NowInTrendCollectionView.swift in Sources */,
 				C4A801AB2A578AE600FC738A /* ElementsOnScrollCollectionView.swift in Sources */,

@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import Firebase
 
 
 class LoginViewController: UIViewController {
     
     var delegate: FirstScreenViewControllerDelegate!
     var checkField = CheckField.shared
+    var service = Service.shared
+    var userDefault = UserDefaults.standard
+
 
     
     override func viewDidLoad() {
@@ -77,39 +81,79 @@ class LoginViewController: UIViewController {
         if checkField.validField(self.view, emailField),
            checkField.validField(self.view, passwordField) {
             
-//            let authData = LoginField(email: loginTextField.text!, password: passTextField.text!)
-//
-//            service.authInApp(authData) { [weak self] responce in
-//                switch responce {
-//                case .success:
-//                    self?.userDefault.set(true, forKey: "isLogin")
+            let authData = LoginField(email: emailField.text!, password: passwordField.text!)
+
+            service.authInApp(authData) { [weak self] responce in
+                switch responce {
+                case .success:
+                    self?.userDefault.set(true, forKey: "isLogin")
 //                    self?.delegate.startApp()
+                    
+//                    let containerVC = ContainerViewController()
+//                                let navigationController = UINavigationController(rootViewController: containerVC)
+//                                navigationController.navigationBar.tintColor = .white
+//                                self?.view.window?.rootViewController = navigationController
+//                                self?.view.window?.makeKeyAndVisible()
+//
+//                                // Remove the current LoginViewController from its parent
+//                                self?.removeFromParent()
+//                                self?.view.removeFromSuperview()
+                    
+                    let userId = Auth.auth().currentUser?.uid
+                    Firestore.firestore().collection("users").document(userId!).getDocument { (snapshot, error) in
+                                    if let error = error {
+                                        print("Error fetching user data: \(error.localizedDescription)")
+                                        return
+                                    }
+
+                                    if let snapshot = snapshot, let userData = snapshot.data(), let userRole = userData["role"] as? String {
+                                        if userRole == "admin" {
+                                            // Present the admin view controller
+                                            let adminVC = AddReceptViewController()
+                                            let navigationController = UINavigationController(rootViewController: adminVC)
+                                            navigationController.navigationBar.tintColor = .white
+                                            self?.view.window?.rootViewController = navigationController
+                                            self?.view.window?.makeKeyAndVisible()
+                                        } else {
+                                            // Present the user view controller
+                                            let userVC = ContainerViewController()
+                                            let navigationController = UINavigationController(rootViewController: userVC)
+                                            navigationController.navigationBar.tintColor = .white
+                                            self?.view.window?.rootViewController = navigationController
+                                            self?.view.window?.makeKeyAndVisible()
+                                        }
+                                    }
+                                }
+                    
+                    
+                        
+                    
 //                    self?.delegate.closeVc()
-////                    closeBar.isHidden = true
-//                case .noVerify:
-//                    let alert = self?.alertAction("Error", "You didn't verify your email. On your email was sended a link")
-//                    let verifyButton = UIAlertAction(title: "OK", style: .cancel)
-//                    alert?.addAction(verifyButton)
-//                    self?.present(alert!, animated: true)
-//                case .error:
-//                    let alert = self?.alertAction("Error", "Email or Password wrong")
-//                    let verifyButton = UIAlertAction(title: "OK", style: .cancel)
-//                    alert?.addAction(verifyButton)
-//                    self?.present(alert!, animated: true)
-//                }
-//            }
+//                    closeBar.isHidden = true
+                case .noVerify:
+                    let alert = self?.alertAction("Error", "You didn't verify your email. On your email was sended a link")
+                    let verifyButton = UIAlertAction(title: "OK", style: .cancel)
+                    alert?.addAction(verifyButton)
+                    self?.present(alert!, animated: true)
+                case .error:
+                    let alert = self?.alertAction("Error", "Email or Password wrong")
+                    let verifyButton = UIAlertAction(title: "OK", style: .cancel)
+                    alert?.addAction(verifyButton)
+                    self?.present(alert!, animated: true)
+                }
+            }
             
         } else {
-//            let alert = self.alertAction("Error", "Check info which you write")
-//            let verifyButton = UIAlertAction(title: "OK", style: .cancel)
-//            alert.addAction(verifyButton)
-//            self.present(alert, animated: true)
+            let alert = self.alertAction("Error", "Check info which you write")
+            let verifyButton = UIAlertAction(title: "OK", style: .cancel)
+            alert.addAction(verifyButton)
+            self.present(alert, animated: true)
         }
     }
     
-//    func alertAction(_ header: String?, _ message: String?) -> UIAlertController {
-//        let alert = UIAlertController(title: header, message: message, preferredStyle: .alert)
-//        return alert
-//    }
+    func alertAction(_ header: String?, _ message: String?) -> UIAlertController {
+        let alert = UIAlertController(title: header, message: message, preferredStyle: .alert)
+        return alert
+    }
 }
 

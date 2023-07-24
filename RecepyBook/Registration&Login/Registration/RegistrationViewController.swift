@@ -13,6 +13,7 @@ class RegistrationViewController: UIViewController {
     var delegate: FirstScreenViewControllerDelegate!
     var checkField = CheckField.shared
 
+    var service = Service.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class RegistrationViewController: UIViewController {
             
         }
         
-        
+        registrationButton.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)
         
         
         NSLayoutConstraint.activate([
@@ -68,30 +69,31 @@ class RegistrationViewController: UIViewController {
         ])
     }
     
-//    @objc func signUpAction() {
-//        if checkField.validField(self.view, emailFieldRegistration),
-//           checkField.validField(self.view, passwordFieldRegistration){
-//            if passwordFieldRegistration.text == repeatPasswordFieldRegistration.text {
-//                service.createNewUser(LoginField(email: emailFieldRegistration.text!, password: passwordFieldRegistration.text!)) { [weak self] code in
-//                    switch code.code {
-//                    case 0: print("Register error")
-//                    case 1: print("Congratulation, all good")
-//                        self?.service.confirmEnail()
-//                        let alert = UIAlertController(title: "OK", message: "Success", preferredStyle: .alert)
-//                        let okButton = UIAlertAction(title: "Good", style: .default) { _ in
+    @objc func signUpAction() {
+        if checkField.validField(view, emailFieldRegistration),
+           checkField.validField(view, passwordFieldRegistration){
+            if passwordFieldRegistration.text == repeatPasswordFieldRegistration.text {
+                service.createNewUser(RegisterField(username: usernameFieldRegistration.text!, email: emailFieldRegistration.text!, password: passwordFieldRegistration.text!)) { [weak self] code in
+                    switch code.code {
+                    case 0: print("Register error")
+                    case 1: print("Congratulation, all good")
+                        self?.service.confirmEmail()
+                        let alert = UIAlertController(title: "OK", message: "Success", preferredStyle: .alert)
+                        let okButton = UIAlertAction(title: "Good", style: .default) { _ in
 //                            self?.delegate.closeVc()
-////                            closeBar.isHidden = true
-//                        }
-//                        alert.addAction(okButton)
-//                        self?.present(alert, animated: true)
-//                    default: print("Unknown error")
-//                    }
-//                }
-//            }else {
-//                print("Bad")
-//            }
-//
-//        }
-//    }
+                            self?.navigationController?.popViewController(animated: true)
+//                            closeBar.isHidden = true
+                        }
+                        alert.addAction(okButton)
+                        self?.present(alert, animated: true)
+                    default: print("Unknown error")
+                    }
+                }
+            }else {
+                print("Bad")
+            }
+
+        }
+    }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 
@@ -38,7 +39,31 @@ class HomePageViewController: UIViewController {
         
 //        menuButton.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
         
-        headlineText.text = "Hi Dear"
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+                // No user is currently signed in
+                return
+            }
+
+            let db = Firestore.firestore()
+            let usersCollection = db.collection("users")
+            let currentUserDoc = usersCollection.document(currentUserID)
+
+            currentUserDoc.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    if let username = document.data()?["username"] as? String {
+                        print("Current user's username: \(username)")
+                        headlineText.text = "Hi \(username)"
+                        // You can use the username here as needed
+                    } else {
+                        print("Username not found for the current user")
+                    }
+                } else {
+                    print("Document does not exist or there was an error: \(error?.localizedDescription ?? "Unknown error")")
+                }
+            }
+        
+        
+//        headlineText.text = "Hi " + (Auth.auth().currentUser!)
         
         NSLayoutConstraint.activate([
 //            menuButton.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: -69),

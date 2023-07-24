@@ -58,6 +58,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         case 2: print("Menu")
         case 3: print("Contacts")
         case 4: print("Settings")
+            let setting = SettingsViewController()
+                    if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+                        navigationController.pushViewController(setting, animated: true)
+                    }
         default: break
         }
         

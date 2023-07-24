@@ -146,8 +146,11 @@ extension FirstScreenViewController: FirstScreenViewControllerDelegate {
     }
     
     func startApp() {
-        let startVc = ContainerViewController()
-        self.view.insertSubview(startVc.view, at: 2)
+//        let startVc = ContainerViewController()
+//        self.view.insertSubview(startVc.view, at: 2)
+        
+        let newViewController = ContainerViewController() // Replace "NewViewController" with the class name of your new view controller
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     

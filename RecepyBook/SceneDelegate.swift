@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var containerViewController: ContainerViewController?
-
+    var userDefault = UserDefaults.standard
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,35 +21,78 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
-
-               let controller = ContainerViewController()
-               let navigationController = UINavigationController(rootViewController: controller)
-                navigationController.navigationBar.tintColor = .white
         
-
+//        userDefault.setValue(false, forKey: "isLogin")
+        let isLogin = userDefault.object(forKey: "isLogin") as? Bool ?? false
         
-               // Customize the navigation bar appearance
-              
+        if isLogin {
+//            startApp()
+            let userId = (Auth.auth().currentUser?.uid)!
+                        Firestore.firestore().collection("users").document(userId).getDocument { (snapshot, error) in
+                            if let error = error {
+                                print("Error fetching user data: \(error.localizedDescription)")
+                                // Handle the error, possibly by showing the login screen again
+                                self.startFirstScreen()
+                                return
+                            }
 
-               // Create a UIBarButtonItem
-                
-            
-            // Adjust the image size
-           
+                            if let snapshot = snapshot, let userData = snapshot.data(), let userRole = userData["role"] as? String {
+                                if userRole == "admin" {
+                                    self.startAdminApp()
+                                } else {
+                                    self.startUserApp()
+                                }
+                            } else {
+                                // User data not found or role information missing, handle the scenario as per your app's logic
+                                // For example, show the login screen again
+                                self.startFirstScreen()
+                            }
+                        }
+        }else {
+            startFirstScreen()
+        }
         
-
-                // Create a UIBarButtonItem with the custom button
-                
-
-               // Add the button to the navigation bar
-
-               window?.rootViewController = navigationController
-               window?.makeKeyAndVisible()
-           }
+    }
     @objc func toggleMenu(_ sender: UIButton) {
             containerViewController?.toggleMenu()
         }
-           
+    
+//    func startApp() {
+//        let controller = ContainerViewController()
+//        let navigationController = UINavigationController(rootViewController: controller)
+//         navigationController.navigationBar.tintColor = .white
+//
+//        window?.rootViewController = navigationController
+//        window?.makeKeyAndVisible()
+//    }
+    
+    func startAdminApp() {
+            let controller = AddReceptViewController()
+            let navigationController = UINavigationController(rootViewController: controller)
+            navigationController.navigationBar.tintColor = .white
+
+            window?.rootViewController = navigationController
+            window?.makeKeyAndVisible()
+        }
+
+        func startUserApp() {
+            let controller = ContainerViewController()
+            let navigationController = UINavigationController(rootViewController: controller)
+            navigationController.navigationBar.tintColor = .white
+
+            window?.rootViewController = navigationController
+            window?.makeKeyAndVisible()
+        }
+
+          
+    func startFirstScreen() {
+        let controller = FirstScreenViewController()
+        let navigationController = UINavigationController(rootViewController: controller)
+         navigationController.navigationBar.tintColor = .white
+
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
