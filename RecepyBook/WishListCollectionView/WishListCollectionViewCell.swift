@@ -35,6 +35,8 @@ class WishListCollectionViewCell: UICollectionViewCell {
         return lbl
     }()
     
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

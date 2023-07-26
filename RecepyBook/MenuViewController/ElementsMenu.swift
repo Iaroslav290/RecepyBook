@@ -1,17 +1,18 @@
 //
-//  Elements.swift
+//  ElementsMenu.swift
 //  RecepyBook
 //
-//  Created by Ярослав Вербило on 2023-07-09.
+//  Created by Ярослав Вербило on 2023-07-30.
 //
 
 import UIKit
 
-let newDishesLabel: UILabel = {
+let menuLabel: UILabel = {
    let label = UILabel()
-    label.text = "New Dishes"
+    label.text = "Menu"
     label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
     label.textColor = .white
     return label
 }()
+
 

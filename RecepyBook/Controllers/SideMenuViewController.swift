@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class SideMenuViewController: UIViewController {
     
     var tableView: UITableView!
 
@@ -36,7 +36,7 @@ class MenuViewController: UIViewController {
 }
 
 
-extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -56,6 +56,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         case 0: print("Profile")
         case 1: print("Wishlist")
         case 2: print("Menu")
+            let menu = MenuSelectCategoryViewController()
+            if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+                navigationController.pushViewController(menu, animated: true)
+            }
         case 3: print("Contacts")
         case 4: print("Settings")
             let setting = SettingsViewController()

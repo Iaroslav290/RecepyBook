@@ -59,5 +59,64 @@ class Service{
             }
         }
     }
+    
+   
 }
 
+//            self.foodItems.sort { (item1, item2) in
+//                        if item1.type == item2.type {
+//                            // If the types are the same, sort by time
+//                            return item1.time < item2.time
+//                        } else {
+//                            // If types are different, sort by type
+//                            return item1.type < item2.type
+//                        }
+//                    }
+            
+            // Reload the collection view
+            
+            
+ 
+func getAllDishes(completion: @escaping ([Product]) -> Void){
+    let db = Firestore.firestore()
+    let foodRef = db.collection("food")
+    
+    foodRef.getDocuments { (querySnapshot, error) in
+        if let error = error {
+            print("Error fetching food data: \(error.localizedDescription)")
+            completion([]) // Return an empty array in case of error
+            return
+        }
+        
+        guard let documents = querySnapshot?.documents else {
+            print("No documents found")
+            completion([]) // Return an empty array if no documents are found
+            return
+        }
+        
+        var array: [Product] = []
+        
+        // Loop through the documents and create FoodItem objects
+        for document in documents {
+            let data = document.data()
+            if let id = document.documentID as? String,
+               let description = data["description"] as? String,
+               let name = data["name"] as? String,
+               let type = data["type"] as? String,
+               let time = data["time"] as? String,
+               let ingredients = data["ingridients"] as? [String],
+               let recept = data["recept"] as? [String],
+               let timestamp = data["timestamp"] as? Timestamp,
+               let components = data["components"] as? [String],
+               let cookTimes = data["cookTimes"] as? [Int] {
+                
+                let foodItem = Product(name: name, id: id, description: description, type: type, time: time, ingridients: ingredients, recept: recept, components: components, cookTimes: cookTimes, timestamp: timestamp)
+                array.append(foodItem)
+            }
+        }
+        
+        completion(array)
+        
+        
+    }
+}

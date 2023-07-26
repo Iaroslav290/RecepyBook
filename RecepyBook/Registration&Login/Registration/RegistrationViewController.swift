@@ -12,15 +12,22 @@ class RegistrationViewController: UIViewController {
     
     var delegate: FirstScreenViewControllerDelegate!
     var checkField = CheckField.shared
+    
+    var tapGest: UITapGestureRecognizer!
+
 
     var service = Service.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tapGest = UITapGestureRecognizer(target: self, action: #selector(endEgiting))
+        view.addGestureRecognizer(tapGest)
+        
         configureElements()
         
         view.backgroundColor = UIColor(red: 27/255, green: 34/255, blue: 35/255, alpha: 1)
+        
         
         
     }
@@ -94,6 +101,10 @@ class RegistrationViewController: UIViewController {
             }
 
         }
+    }
+    
+    @objc func endEgiting() {
+        self.view.endEditing(true)
     }
 }
 

@@ -28,6 +28,7 @@ class ContainerViewController: UIViewController, ViewControllerDelegate {
         
         
         
+        
         button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
         button.layer.cornerRadius = 45/2
         //    button.setImage(UIImage(named: "menu"), for: .normal)
@@ -64,7 +65,7 @@ class ContainerViewController: UIViewController, ViewControllerDelegate {
     
     func configureMenuViewController() {
         if menuViewController == nil {
-            menuViewController = MenuViewController()
+            menuViewController = SideMenuViewController()
             view.insertSubview(menuViewController.view, at: 0)
             addChild(menuViewController)
             print("Add menuViewController")

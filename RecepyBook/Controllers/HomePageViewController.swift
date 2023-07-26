@@ -21,9 +21,19 @@ class HomePageViewController: UIViewController {
     
     var delegate: ViewControllerDelegate?
     
+    
+//    let pieChartDataEntries: [PieChartDataEntry] = [
+//            PieChartDataEntry(value: 30, color: UIColor.blue),
+//            PieChartDataEntry(value: 50, color: UIColor.green),
+//            PieChartDataEntry(value: 20, color: UIColor.red)
+//        ]
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         
         configureElements()
         
@@ -31,11 +41,24 @@ class HomePageViewController: UIViewController {
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+
+            // Fetch the wishlist data each time the view appears
+        WishListCollectionView.shared.fetchWishlistData()
+        }
+    
     func configureElements() {
-        [/*menuButton,*/ headlineText, cookedLabel, searchView, searchImage, searchTextField, elementsOnScrollCollectionView, wishListLabel, WishListCollectionView.shared].forEach{
+        [/*menuButton,*/ headlineText, cookedLabel, searchView, searchImage, searchTextField, elementsOnScrollCollectionView, wishListLabel, WishListCollectionView.shared, /*pieChart*/].forEach{
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
+        
+        
+        
+//                pieChart.dataEntries = pieChartDataEntries
+              
         
 //        menuButton.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
         
@@ -103,6 +126,11 @@ class HomePageViewController: UIViewController {
             WishListCollectionView.shared.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             WishListCollectionView.shared.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
+            
+//            pieChart.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//                        pieChart.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//                        pieChart.widthAnchor.constraint(equalToConstant: 200),
+//                        pieChart.heightAnchor.constraint(equalToConstant: 200)
 
             
         ])

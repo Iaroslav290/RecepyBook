@@ -18,8 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        
+
+        navigationBarAppearance.backgroundColor = UIColor(red: 27/255, green: 34/255, blue: 35/255, alpha: 1)
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().standardAppearance.backgroundEffect = nil
+
+
+    
+
         return true
     }
+    
 
     // MARK: UISceneSession Lifecycle
 

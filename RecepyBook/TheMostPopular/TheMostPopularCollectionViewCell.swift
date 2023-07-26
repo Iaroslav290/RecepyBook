@@ -40,6 +40,13 @@ class TheMostPopularCollectionViewCell: UICollectionViewCell {
         return lbl
     }()
     
+    let wishlistButton: UIButton = {
+               let button = UIButton()
+            button.backgroundColor = .blue
+                button.translatesAutoresizingMaskIntoConstraints = false
+               return button
+           }()
+    
     var isFirstCell: Bool = false {
             didSet {
                 setNeedsLayout()
@@ -51,6 +58,7 @@ class TheMostPopularCollectionViewCell: UICollectionViewCell {
             addSubview(imageView)
             addSubview(nameLabel)
             addSubview(descriptionLabel)
+            addSubview(wishlistButton)
         }
        
     override func layoutSubviews() {
@@ -74,7 +82,12 @@ class TheMostPopularCollectionViewCell: UICollectionViewCell {
                     
                     descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
                     descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-                    descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5)
+                    descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+                    
+                    wishlistButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+                    wishlistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+                    wishlistButton.topAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+                    wishlistButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
                 ])
             } else {
                 // Reset properties for the remaining cells
@@ -87,6 +100,11 @@ class TheMostPopularCollectionViewCell: UICollectionViewCell {
                     
                     nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
                     nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+                    
+                    wishlistButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+                    wishlistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+                    wishlistButton.topAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+                    wishlistButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
                 ])
             }
         }

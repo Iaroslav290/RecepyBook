@@ -16,10 +16,14 @@ class LoginViewController: UIViewController {
     var service = Service.shared
     var userDefault = UserDefaults.standard
 
+    var tapGest: UITapGestureRecognizer!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tapGest = UITapGestureRecognizer(target: self, action: #selector(endEgiting))
+        view.addGestureRecognizer(tapGest)
         
         configureElements()
         
@@ -154,6 +158,10 @@ class LoginViewController: UIViewController {
     func alertAction(_ header: String?, _ message: String?) -> UIAlertController {
         let alert = UIAlertController(title: header, message: message, preferredStyle: .alert)
         return alert
+    }
+    
+    @objc func endEgiting() {
+        self.view.endEditing(true)
     }
 }
 

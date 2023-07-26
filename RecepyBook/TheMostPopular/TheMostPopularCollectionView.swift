@@ -5,103 +5,15 @@
 //  Created by Ярослав Вербило on 2023-07-09.
 //
 
-//import UIKit
-//
-//
-//class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//
-//    static let shared = TheMostPopularCollectionView()
-//
-//    init() {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical
-//        super.init(frame: .zero, collectionViewLayout: layout)
-//
-//        backgroundColor = .clear
-//        delegate = self
-//        dataSource = self
-//        register(TheMostPopularCollectionViewCell.self, forCellWithReuseIdentifier: TheMostPopularCollectionViewCell.reuseId)
-//
-//        layout.minimumLineSpacing = 15
-//        contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-//
-//        showsHorizontalScrollIndicator = false
-//        showsVerticalScrollIndicator = false
-//   }
-//
-//
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return wishList.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = dequeueReusableCell(withReuseIdentifier: TheMostPopularCollectionViewCell.reuseId, for: indexPath) as! TheMostPopularCollectionViewCell
-//        cell.imageView.image = theMostPopular[indexPath.row].image
-//        cell.nameLabel.text = theMostPopular[indexPath.row].name
-////        cell.descriptionLabel.text = nowInTrend[indexPath.row].description
-//
-//        if indexPath.row == 0 {
-//                // Customize the first cell
-//            cell.descriptionLabel.text = theMostPopular[indexPath.row].description
-//                cell.nameLabel.textAlignment = .center
-//                cell.nameLabel.font = UIFont.boldSystemFont(ofSize: 32)
-//            cell.backgroundColor = UIColor(red: 244/255, green: 254/255, blue: 253/255, alpha: 1)
-//
-//            cell.isFirstCell = true
-//
-//
-//            } else {
-//                // Reset properties for the remaining cells
-//            cell.nameLabel.textAlignment = .center
-//            cell.nameLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-//                cell.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-//
-//                cell.isFirstCell = false
-//
-//            }
-//
-//
-//
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if indexPath.row == 0 {
-//                // Size for the first cell
-//                return CGSize(width: 390, height: 390)
-//            } else {
-//                // Size for the remaining cells
-//                return CGSize(width: (frame.width - 50) / 2, height: 170)
-//            }
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//
-//
-//
-//}
 
 
 import UIKit
 import FirebaseFirestore
 import FirebaseStorage
+import FirebaseAuth
 
-class FoodItem {
-    let name: String
-    let description: String
-    let imageURL: String
+var foodItems: [Product] = []
 
-    init(name: String, description: String, imageURL: String) {
-        self.name = name
-        self.description = description
-        self.imageURL = imageURL
-    }
-}
 
 class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -109,7 +21,10 @@ class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, 
     
     weak var productViewController: ProductViewController?
 
-    var foodItems: [Product] = []
+    
+    var selectedIndexPath: IndexPath?
+    
+    var wishlist: String?
 
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -130,6 +45,8 @@ class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, 
         // Fetch the food data from Firestore
         fetchFoodData()
     }
+    
+    
 
     // Fetch food data from Firestore
     func fetchFoodData() {
@@ -150,7 +67,7 @@ class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, 
             }
 
             // Clear existing food items
-            self.foodItems.removeAll()
+            foodItems.removeAll()
 
             // Loop through the documents and create FoodItem objects
             for document in documents {
@@ -158,13 +75,32 @@ class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, 
 //                if let name = document.documentID as? String,
                 if let id = document.documentID as? String,
                     let description = data["description"] as? String,
-                    let name = data["name"] as? String {
+                    let name = data["name"] as? String,
+                   let type = data["type"] as? String,
+                   let time = data["time"] as? String,
+                   let ingredients = data["ingridients"] as? [String],
+                    let recept = data["recept"] as? [String],
+                   let timestamp = data["timestamp"] as? Timestamp,
+                    let components = data["components"] as? [String],
+                   let cookTimes = data["cookTimes"] as? [Int]{
+                    
+                    
 //                    let foodItem = FoodItem(name: name, description: description, imageURL: imageURL)
-                    let foodItem = Product(name: name, id: id, description: description)
-                    self.foodItems.append(foodItem)
+                    let foodItem = Product(name: name, id: id, description: description, type: type, time: time, ingridients: ingredients, recept: recept, components: components, cookTimes: cookTimes, timestamp: timestamp)
+                    foodItems.append(foodItem)
                 }
             }
 
+//            self.foodItems.sort { (item1, item2) in
+//                        if item1.type == item2.type {
+//                            // If the types are the same, sort by time
+//                            return item1.time < item2.time
+//                        } else {
+//                            // If types are different, sort by type
+//                            return item1.type < item2.type
+//                        }
+//                    }
+            
             // Reload the collection view
             self.reloadData()
         }
@@ -194,31 +130,23 @@ class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, 
 //
         cell.nameLabel.text = foodItem.name
         
-        let storageRef = Storage.storage().reference().child("food/")
+        cell.wishlistButton.tag = indexPath.row
+        cell.wishlistButton.addTarget(self, action: #selector(wishListAction), for: .touchUpInside)
         
-        storageRef.listAll { result, error in
-            if let error = error {
-                print("Error listing images: \(error.localizedDescription)")
-                // Handle the error appropriately (e.g., show an error message to the user)
-            } else {
-                // 'result.items' contains an array of all images inside the "food" folder
-                for imageRef in result!.items {
-                    // Download each image in the folder
-                    imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                        if let error = error {
-                            print("Error downloading image: \(error.localizedDescription)")
-                            // Handle the error appropriately (e.g., show an error message to the user)
-                        } else {
-                            // Image data is available in 'data', you can convert it to UIImage or use it as needed
-                            if let image = UIImage(data: data!) {
-                                // Do something with the image (e.g., display it in an ImageView)
-                                cell.imageView.image = image
-                            }
+        let storageRef = Storage.storage().reference().child("food/\(foodItem.id)")
+
+                storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                        // Handle the error appropriately (e.g., show a placeholder image)
+                    } else {
+                        // Image data is available in 'data', you can convert it to UIImage or use it as needed
+                        if let image = UIImage(data: data!) {
+                            // Do something with the image (e.g., display it in the cell's ImageView)
+                            cell.imageView.image = image
                         }
                     }
                 }
-            }
-        }
         
 
         if indexPath.row == 0 {
@@ -271,6 +199,92 @@ class TheMostPopularCollectionView: UICollectionView, UICollectionViewDelegate, 
         fatalError("init(coder:) has not been implemented")
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    @objc func wishListAction(sender: UIButton) {
+        let selectedProduct = foodItems[sender.tag]
+        
+        // Check if the item already exists in the Wishlist
+        isItemInWishlist(selectedProduct) { itemExists in
+            if itemExists {
+                print("Item already exists in the Wishlist.")
+            } else {
+                // Add the item to the Wishlist
+                self.addToWishlist(selectedProduct)
+            }
+        }
+    }
+
+    func isItemInWishlist(_ product: Product, completion: @escaping (Bool) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            completion(false) // If user is not logged in, consider item not in the Wishlist
+            return
+        }
+        
+        let db = Firestore.firestore()
+        let wishlistRef = db.collection("users").document(uid).collection("wishlist")
+        
+        // Perform a query to check if the item's ID already exists in the Wishlist
+        let query = wishlistRef.whereField("Id", isEqualTo: product.id).limit(to: 1)
+        
+        query.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error checking Wishlist: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            if let documents = querySnapshot?.documents, !documents.isEmpty {
+                // If there's at least one document, the item exists in the Wishlist
+                print("Item already exists in the Wishlist.")
+                completion(true)
+            } else {
+                // Item does not exist in the Wishlist
+                completion(false)
+            }
+        }
+    }
+
+    func addToWishlist(_ product: Product) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("User not logged in.")
+            return
+        }
+        
+        let ref = Firestore.firestore()
+        let convoId = UUID().uuidString
+        
+        let wishlistItem: [String: Any] = [
+            "Id": product.id,
+            "name": product.name,
+            "description": product.description,
+            "type": product.type,
+            "time": product.time,
+            "ingridients": product.ingridients,
+            "recept": product.recept,
+            "components": product.components,
+            "cookTimes": product.cookTimes,
+            "timestamp": FieldValue.serverTimestamp()
+        ]
+        
+        ref.collection("users").document(uid).collection("wishlist").document(convoId).setData(wishlistItem) { error in
+            if let error = error {
+                print("Error adding item to Wishlist: \(error.localizedDescription)")
+            } else {
+                print("Item added to Wishlist successfully!")
+            }
+        }
+    }
+
+
+    
+    
 }
 
 

@@ -14,7 +14,24 @@ struct Product {
 //    var title: String
 //    var imageUrl: String
     var description: String
+    var type: String
+    var time: String
+    var ingridients: [String]
+    var formattedIngredients: String {
+        return ingridients.map { "- \($0.capitalized)" }.joined(separator: "\n")
+        }
+    var recept: [String]
+    var formattedRecept: String {
+//        return recept.map { "- \($0.capitalized)" }.joined(separator: "\n")
+        return recept.enumerated().map { (index, item) in
+                    "\(index + 1). \(item)"
+                }.joined(separator: "\n")
+    }
     
+    var components: [String]
+    var cookTimes: [Int]
+    
+    var timestamp: Timestamp
     
     var represintation: [String: Any] {
         
@@ -23,6 +40,21 @@ struct Product {
         repres["id"] = self.id
 //        repres["title"] = self.title
         repres["description"] = self.description
+        repres["type"] = self.type
+        repres["time"] = self.time
+        repres["ingridients"] = self.ingridients
+        
+        repres["formattedIngredients"] = self.formattedIngredients
+        
+        repres["recept"] = self.recept
+        repres["formattedRecept"] = self.formattedRecept
+        
+        repres["components"] = self.components
+        repres["cookTimes"] = self.cookTimes
+        repres["timestamp"] = self.timestamp
+        
+        
+
         
         return repres
     }
@@ -41,6 +73,7 @@ class DatabaseService {
     
     
     func setRecept(product: Product, image: Data, completion: @escaping (Result <Product, Error>) -> ()) {
+        
         
         StorageService.shared.upload(id: product.id, image: image) { result in
             
@@ -62,4 +95,6 @@ class DatabaseService {
             }
         }
     }
+    
+    
 }
