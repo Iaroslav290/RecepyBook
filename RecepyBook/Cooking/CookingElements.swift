@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 let stepLabel: UILabel = {
    let label = UILabel()
     label.text = "Step "
