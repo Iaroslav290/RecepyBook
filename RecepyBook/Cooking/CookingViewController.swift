@@ -262,8 +262,11 @@ class CookingViewController: UIViewController {
     @objc func homeAction() {
         
         performAction(button: homeButton, action: {
-                    let homeVC = ContainerViewController()
-            self.navigationController?.setViewControllers([homeVC], animated: true)
+//                    let homeVC = ContainerViewController()
+//            self.navigationController?.setViewControllers([homeVC], animated: true)
+            if let containerViewController = self.navigationController?.viewControllers.first(where: { $0 is ContainerViewController }) {
+                self.navigationController?.popToViewController(containerViewController, animated: true)
+               }
             self.resetTimer()
             self.buttonEnableTimer?.invalidate()
             self.updateUI()
